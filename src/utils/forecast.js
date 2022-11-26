@@ -20,6 +20,7 @@ const forecast = (latitude, longitude, callback) => {
         const temperature = body.current.temperature;
         const feelsLike = body.current.feelslike;
         const precip = body.current.precip;
+        const humidity = body.current.humidity;
         callback(
           undefined,
           weatherDesc +
@@ -30,7 +31,10 @@ const forecast = (latitude, longitude, callback) => {
             " degrees out. " +
             "There is a " +
             precip +
-            "% chance of rain."
+            "% chance of rain." +
+            "The humidity is " +
+            humidity +
+            "%."
         );
       }
     });
